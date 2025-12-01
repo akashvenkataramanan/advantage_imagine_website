@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // For GitHub Pages - uncomment and set your repo name if deploying there
-  // basePath: "/your-repo-name",
-  // assetPrefix: "/your-repo-name/",
+  // For GitHub Pages deployment
+  basePath: "/advantage_imagine_website",
+  assetPrefix: "/advantage_imagine_website/",
 };
 
 export default nextConfig;
