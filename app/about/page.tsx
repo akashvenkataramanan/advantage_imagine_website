@@ -17,7 +17,7 @@ import {
   ArrowRight,
   CheckCircle,
 } from "lucide-react";
-import { FOUNDER, MISSION, CONTACT } from "@/lib/constants";
+import { FOUNDER, MISSION, CONTACT, BASE_PATH } from "@/lib/constants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -125,7 +125,7 @@ export default function AboutPage() {
               {/* Team Photo */}
               <motion.div variants={fadeInUp} className="mt-8">
                 <Image
-                  src="/images/about/mission.png"
+                  src={`${BASE_PATH}/images/about/mission.png`}
                   alt="Our Team at Advantage Imaging"
                   width={600}
                   height={400}
@@ -214,7 +214,7 @@ export default function AboutPage() {
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
                 <Image
-                  src="/images/doctor/doctor.png"
+                  src={`${BASE_PATH}/images/doctor/doctor.png`}
                   alt={FOUNDER.name}
                   width={128}
                   height={128}

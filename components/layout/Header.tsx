@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
-import { NAV_LINKS, CONTACT } from "@/lib/constants";
+import { NAV_LINKS, CONTACT, BASE_PATH } from "@/lib/constants";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +35,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo/logo.png"
+              src={`${BASE_PATH}/images/logo/logo.png`}
               alt="Advantage Imaging"
               width={180}
               height={60}

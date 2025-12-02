@@ -11,15 +11,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Advantage Imaging & Research Institute | Expert Radiology Services Chennai",
-  description: "Expert radiology services at affordable costs in Chennai. State-of-the-art 160 slice CT, 1.5T MRI, Digital X-ray & Ultrasound. 30+ years experience. Book your appointment today.",
-  keywords: "radiology, CT scan, MRI, X-ray, ultrasound, Chennai, Mylapore, diagnostic imaging, medical imaging",
+  title: "Best CT Scan & MRI Center in Chennai | Advantage Imaging Mylapore",
+  description: "Best radiology center in Chennai offering CT scan, MRI scan, ultrasound & X-ray services. Advanced 1.5T wide-bore MRI & 160-slice CT. Tata Memorial trained radiologist with 30+ years experience. Located in Mylapore. Book your scan today.",
+  keywords: "best CT scan Chennai, MRI scan near me, best radiology center Chennai, MRI center Mylapore, CT scan center Chennai, diagnostic imaging Chennai, radiology services Chennai, wide bore MRI Chennai, scan center near me",
   authors: [{ name: "Advantage Imaging & Research Institute" }],
   openGraph: {
-    title: "Advantage Imaging & Research Institute",
-    description: "Expert radiology services at affordable costs in Chennai",
+    title: "Best CT Scan & MRI Center in Chennai | Advantage Imaging",
+    description: "Best radiology center in Chennai with advanced 1.5T wide-bore MRI & 160-slice CT. Expert radiology services at affordable costs in Mylapore.",
     type: "website",
     locale: "en_IN",
+    siteName: "Advantage Imaging & Research Institute",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best CT Scan & MRI Center in Chennai | Advantage Imaging",
+    description: "Best radiology center in Chennai with advanced 1.5T wide-bore MRI & 160-slice CT. Located in Mylapore.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://advantageimaging.org",
   },
 };
 

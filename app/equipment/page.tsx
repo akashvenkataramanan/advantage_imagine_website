@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { CheckCircle, ArrowRight, Phone, Shield, Zap, Heart, Eye } from "lucide-react";
-import { EQUIPMENT, CONTACT } from "@/lib/constants";
+import { EQUIPMENT, CONTACT, BASE_PATH } from "@/lib/constants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -73,12 +73,18 @@ export default function EquipmentPage() {
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                   <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl p-12 text-white text-center">
-                    <div className="text-7xl md:text-8xl font-bold mb-2">
-                      {index === 0 ? "160" : index === 1 ? "1.5T" : index === 2 ? "HD" : "DR"}
+                    <div className="text-6xl md:text-7xl font-bold mb-2">
+                      {index === 0 ? "uCT 780" : index === 1 ? "uMR 570" : index === 2 ? "HD" : "DR"}
                     </div>
                     <div className="text-xl text-white/80">
-                      {index === 0 ? "Slice CT Scanner" : index === 1 ? "MRI Scanner" : index === 2 ? "Ultrasound" : "Digital X-Ray"}
+                      {index === 0 ? "160-Slice CT Scanner" : index === 1 ? "1.5T Wide-Bore MRI" : index === 2 ? "Ultrasound" : "Digital X-Ray"}
                     </div>
+                    {index === 0 && (
+                      <div className="mt-4 text-sm text-white/70">United Imaging</div>
+                    )}
+                    {index === 1 && (
+                      <div className="mt-4 text-sm text-white/70">United Imaging</div>
+                    )}
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>
@@ -143,7 +149,7 @@ export default function EquipmentPage() {
             className="mb-12"
           >
             <Image
-              src="/images/equipment/room.png"
+              src={`${BASE_PATH}/images/equipment/room.png`}
               alt="State-of-the-art scanning facility at Advantage Imaging"
               width={1200}
               height={500}
@@ -263,23 +269,33 @@ export default function EquipmentPage() {
                 {[
                   {
                     label: "CT Scanner",
-                    ours: "160 Slice",
+                    ours: "160 Slice (uCT 780)",
                     typical: "16-64 Slice",
                   },
                   {
+                    label: "CT Rotation Speed",
+                    ours: "0.3 seconds",
+                    typical: "0.5-1 second",
+                  },
+                  {
                     label: "MRI Bore Width",
-                    ours: "70cm Wide",
+                    ours: "70cm (uMR 570)",
                     typical: "60cm Standard",
                   },
                   {
-                    label: "Heart Scan Time",
+                    label: "MRI Tunnel Length",
+                    ours: "150cm Short",
+                    typical: "170-200cm",
+                  },
+                  {
+                    label: "Cardiac CT Time",
                     ours: "4 Seconds",
                     typical: "10-15 Seconds",
                   },
                   {
-                    label: "Air Filtration",
-                    ours: "HEPA Filtered",
-                    typical: "Standard AC",
+                    label: "Patient Capacity",
+                    ours: "Up to 250kg",
+                    typical: "Up to 150kg",
                   },
                 ].map((item, index) => (
                   <div key={index} className="grid grid-cols-3 gap-4 items-center">

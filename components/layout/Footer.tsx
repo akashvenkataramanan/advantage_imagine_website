@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { CONTACT, NAV_LINKS } from "@/lib/constants";
+import { CONTACT, NAV_LINKS, BASE_PATH } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/images/logo/logo.png"
+                src={`${BASE_PATH}/images/logo/logo.png`}
                 alt="Advantage Imaging"
                 width={140}
                 height={50}

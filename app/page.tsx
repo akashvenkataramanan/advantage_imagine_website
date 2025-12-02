@@ -21,7 +21,7 @@ import {
   Stethoscope,
   Syringe,
 } from "lucide-react";
-import { CONTACT, STATS, EQUIPMENT, SERVICES, FOUNDER, TRUST_INDICATORS } from "@/lib/constants";
+import { CONTACT, STATS, EQUIPMENT, SERVICES, FOUNDER, TRUST_INDICATORS, BASE_PATH } from "@/lib/constants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -57,7 +57,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative gradient-hero text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10" />
+        {/* Decorative pattern overlay */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
         <div className="relative max-w-7xl mx-auto px-4 py-20 lg:py-32">
           <motion.div
             initial="hidden"
@@ -75,31 +76,35 @@ export default function Home() {
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
             >
-              Expert Radiology Services at{" "}
-              <span className="text-[var(--secondary-light)]">Affordable Costs</span>
+              Best CT & MRI Scan Center in{" "}
+              <span className="text-[var(--secondary-light)]">Chennai</span>
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 mb-8">
-              State-of-the-art 160 slice CT, 1.5T Wide Bore MRI, and advanced diagnostic
-              imaging led by internationally acclaimed radiologist with 30+ years of experience.
+              Advanced 160-slice CT & 1.5T wide-bore MRI with a healing garden environment.
+              Led by Tata Memorial trained radiologist with 30+ years experience. Anxiety-free scans in Mylapore.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
               <a
                 href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
-                  "Hello, I would like to book an appointment at Advantage Imaging."
+                  "Hello, I would like to book a scan at Advantage Imaging."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[var(--primary)] px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors flex items-center gap-2"
               >
-                Book Appointment
+                Book Your Scan
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href={`tel:${CONTACT.phone[0]}`}
+                href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
+                  "Hello, I would like to get a price estimate for scans at Advantage Imaging."
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition-colors flex items-center gap-2"
               >
                 <Phone className="w-5 h-5" />
-                Call Now
+                Get Price Estimate
               </a>
             </motion.div>
           </motion.div>
@@ -160,7 +165,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About the Center Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -174,7 +179,7 @@ export default function Home() {
                 variants={fadeInUp}
                 className="text-[var(--secondary)] font-medium mb-2"
               >
-                About Us
+                About Our Center
               </motion.p>
               <motion.h2
                 variants={fadeInUp}
@@ -183,22 +188,22 @@ export default function Home() {
                 Bringing High-End Radiology to{" "}
                 <span className="text-[var(--primary)]">Every Patient</span>
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-[var(--foreground-muted)] mb-6">
-                Advantage Imaging & Research Institute is an outpatient radiology imaging
-                center in Chennai, conceived with the objective of providing expert radiology
-                services to the community at reasonable costs.
+              <motion.p variants={fadeInUp} className="text-[var(--foreground-muted)] mb-4">
+                <strong className="text-[var(--primary)]">Inaugurated by Hon. Health Minister Ma. Subramanian</strong>,
+                Advantage Imaging & Research Institute brings world-class radiology to the heart of Mylapore, Chennai.
               </motion.p>
               <motion.p variants={fadeInUp} className="text-[var(--foreground-muted)] mb-6">
-                All high-end radiology machines are typically clustered within large corporate
-                hospitals, making them out of reach for the common man. Our center brings
-                sophisticated radiology equipment within reach of all, in the heart of Chennai.
+                High-end radiology machines are typically clustered within large corporate
+                hospitals. Our center brings sophisticated equipment within reach of all &ndash;
+                at affordable costs, without compromising on quality.
               </motion.p>
               <motion.div variants={fadeInUp} className="space-y-3 mb-8">
                 {[
+                  "Advanced 160-slice CT and 1.5T wide-bore MRI",
                   "Detailed reports with images as roadmaps for clinicians",
-                  "Tailored studies targeting specific disease conditions",
                   "Wide bore MRI that reduces claustrophobia",
                   "HEPA filtered scan rooms for infection prevention",
+                  "Beautiful garden environment for reduced anxiety",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-[var(--accent)] flex-shrink-0 mt-0.5" />
@@ -215,59 +220,132 @@ export default function Home() {
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </motion.div>
-
-              {/* Team Photo */}
-              <motion.div variants={fadeInUp} className="mt-8">
-                <Image
-                  src="/images/about/mission.png"
-                  alt="Our Team at Advantage Imaging"
-                  width={600}
-                  height={300}
-                  className="rounded-xl shadow-lg w-full h-auto"
-                />
-              </motion.div>
             </motion.div>
 
-            {/* Founder Card */}
+            {/* Building Photo */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-[var(--background-alt)] rounded-2xl p-8"
+              className="space-y-6"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <Image
-                  src="/images/doctor/doctor.png"
-                  alt={FOUNDER.name}
-                  width={80}
-                  height={80}
-                  className="w-20 h-20 rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="text-xl font-bold">{FOUNDER.name}</h3>
-                  <p className="text-[var(--foreground-muted)]">{FOUNDER.title}</p>
-                  <p className="text-[var(--secondary)] font-medium text-sm">
-                    {FOUNDER.experience} Experience
-                  </p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                {FOUNDER.credentials.slice(0, 4).map((credential, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <div className="w-2 h-2 rounded-full bg-[var(--primary)] mt-2 flex-shrink-0" />
-                    <span className="text-sm text-[var(--foreground)]">{credential}</span>
-                  </div>
-                ))}
-              </div>
-              <Link
-                href="/about"
-                className="mt-6 inline-flex items-center gap-2 text-[var(--primary)] font-medium text-sm hover:gap-3 transition-all"
-              >
-                View Full Profile
-                <ChevronRight className="w-4 h-4" />
-              </Link>
+              <Image
+                src={`${BASE_PATH}/images/clinic/clinic.jpg`}
+                alt="Advantage Imaging Center Building with flowering gardens"
+                width={600}
+                height={500}
+                className="rounded-2xl shadow-lg w-full h-auto"
+              />
+              <p className="text-center text-sm text-[var(--foreground-muted)]">
+                Our center in Mylapore, surrounded by beautiful flowering gardens
+              </p>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Healing Environment Section */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-teal-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-12"
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="text-green-600 font-medium mb-2"
+            >
+              A Healing Environment
+            </motion.p>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold mb-4"
+            >
+              Reducing Scan Anxiety with{" "}
+              <span className="text-green-600">Nature</span>
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-[var(--foreground-muted)] max-w-2xl mx-auto"
+            >
+              Unlike cold, sterile imaging centers, Advantage Imaging offers a warm,
+              nature-rich environment to help patients and families feel calm and relaxed.
+            </motion.p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-6 shadow-sm"
+            >
+              <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                <span className="text-2xl">🌿</span>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Ground-Level Gardens</h3>
+              <p className="text-[var(--foreground-muted)] text-sm">
+                Beautiful flowering gardens surround our building, creating a
+                welcoming first impression that eases anxiety before your scan.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl p-6 shadow-sm"
+            >
+              <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                <span className="text-2xl">🌺</span>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Rooftop Terrace Garden</h3>
+              <p className="text-[var(--foreground-muted)] text-sm">
+                Our 5th-floor terrace garden offers a peaceful retreat where
+                patients and families can relax, enjoy tea, and unwind.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl p-6 shadow-sm"
+            >
+              <div className="w-14 h-14 rounded-xl bg-green-100 flex items-center justify-center mb-4">
+                <span className="text-2xl">💚</span>
+              </div>
+              <h3 className="font-bold text-lg mb-2">Staff-Tended with Care</h3>
+              <p className="text-[var(--foreground-muted)] text-sm">
+                Our founder is a passionate gardener, and the Advantage Imaging
+                team helps care for and maintain these healing green spaces.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Staff Photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <Image
+              src={`${BASE_PATH}/images/clinic/cheerful.png`}
+              alt="Our friendly team at Advantage Imaging"
+              width={1000}
+              height={400}
+              className="rounded-2xl shadow-lg w-full h-auto mx-auto max-w-4xl"
+            />
+            <p className="text-center text-sm text-[var(--foreground-muted)] mt-4">
+              Our cheerful team ready to welcome you with compassionate care
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -351,7 +429,7 @@ export default function Home() {
             className="mt-12"
           >
             <Image
-              src="/images/equipment/room.png"
+              src={`${BASE_PATH}/images/equipment/room.png`}
               alt="State-of-the-art scanning room at Advantage Imaging"
               width={1200}
               height={500}
@@ -466,6 +544,179 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Health Checkups Preview Section */}
+      <section className="py-20 bg-[var(--background-alt)]">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-12"
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="text-[var(--secondary)] font-medium mb-2"
+            >
+              Preventive Care
+            </motion.p>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold mb-4"
+            >
+              Targeted Health Checkup Packages
+            </motion.h2>
+            <motion.p
+              variants={fadeInUp}
+              className="text-[var(--foreground-muted)] max-w-2xl mx-auto"
+            >
+              Comprehensive health screening packages designed for early detection
+              and preventive care. Customized for different age groups and health needs.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
+            {[
+              { name: "Basic Health Check", desc: "CBC, Glucose, Thyroid, USG, X-Ray, ECG", icon: "🏥" },
+              { name: "Heart Check", desc: "Coronary CT Angio, Echo, Full Cardiac Assessment", icon: "❤️" },
+              { name: "Whole Body Check", desc: "Whole Body MRI, Complete Blood Work, Full Imaging", icon: "🔬" },
+              { name: "Women's Health", desc: "Pap Smear, Mammography, Complete Screening", icon: "👩" },
+            ].map((pkg, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="text-3xl mb-3">{pkg.icon}</div>
+                <h3 className="font-bold text-lg mb-2">{pkg.name}</h3>
+                <p className="text-[var(--foreground-muted)] text-sm mb-4">{pkg.desc}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mt-10"
+          >
+            <a
+              href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
+                "Hello, I would like to know about health checkup packages at Advantage Imaging."
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[var(--accent)] text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity"
+            >
+              Get Package Pricing on WhatsApp
+              <ArrowRight className="w-5 h-5" />
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Medical Leadership Section */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-12"
+          >
+            <motion.p
+              variants={fadeInUp}
+              className="text-[var(--secondary)] font-medium mb-2"
+            >
+              Medical Leadership
+            </motion.p>
+            <motion.h2
+              variants={fadeInUp}
+              className="text-3xl md:text-4xl font-bold mb-4"
+            >
+              Know Our Founder
+            </motion.h2>
+          </motion.div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-[var(--background-alt)] rounded-2xl p-8"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <Image
+                  src={`${BASE_PATH}/images/doctor/doctor.png`}
+                  alt={FOUNDER.name}
+                  width={100}
+                  height={100}
+                  className="w-24 h-24 rounded-full object-cover"
+                />
+                <div>
+                  <h3 className="text-2xl font-bold">{FOUNDER.name}</h3>
+                  <p className="text-[var(--foreground-muted)]">{FOUNDER.title}</p>
+                  <p className="text-[var(--secondary)] font-medium">
+                    {FOUNDER.experience} Experience
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-3 mb-6">
+                {FOUNDER.credentials.map((credential, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="w-2 h-2 rounded-full bg-[var(--primary)] mt-2 flex-shrink-0" />
+                    <span className="text-sm text-[var(--foreground)]">{credential}</span>
+                  </div>
+                ))}
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-2 text-[var(--primary)] font-semibold hover:gap-3 transition-all"
+              >
+                View Full Profile & Published Signs
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h3 className="text-xl font-bold">5 Published Radiology Signs</h3>
+              <p className="text-[var(--foreground-muted)]">
+                Dr. Rochita Venkataramanan has contributed five diagnostic signs to
+                international radiology literature, now used by radiologists worldwide:
+              </p>
+              <div className="grid gap-4">
+                {[
+                  "Cluster of Black Pearls Sign - Identifies sarcoidosis vs cancer",
+                  "Omental Rim Sign - Differentiates peritoneal cancer from TB",
+                  "Leash Sign - Detects early extrauterine pregnancy",
+                  "Cluster of Grape Sign - Distinguishes liver cancer from infection",
+                  "Tunnel Sign - Identifies Fasciola hepatica infection",
+                ].map((sign, index) => (
+                  <div key={index} className="flex items-start gap-3 bg-white p-3 rounded-lg shadow-sm">
+                    <div className="w-6 h-6 rounded-full bg-[var(--primary)] text-white flex items-center justify-center text-sm font-bold flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <span className="text-sm text-[var(--foreground)]">{sign}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 gradient-hero text-white">
         <div className="max-w-7xl mx-auto px-4 text-center">
@@ -485,8 +736,8 @@ export default function Home() {
               variants={fadeInUp}
               className="text-white/90 text-lg mb-8 max-w-2xl mx-auto"
             >
-              Get expert radiology services at affordable costs. Our team is ready to
-              assist you with scheduling and any questions you may have.
+              Get expert radiology services at affordable costs. Contact us for
+              transparent pricing and easy scheduling via WhatsApp.
             </motion.p>
             <motion.div
               variants={fadeInUp}
@@ -494,13 +745,13 @@ export default function Home() {
             >
               <a
                 href={`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(
-                  "Hello, I would like to book an appointment at Advantage Imaging."
+                  "Hello, I would like to get a price estimate for scans at Advantage Imaging."
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white text-[var(--primary)] px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition-colors flex items-center gap-2"
               >
-                Chat on WhatsApp
+                Get Price Estimate on WhatsApp
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a
