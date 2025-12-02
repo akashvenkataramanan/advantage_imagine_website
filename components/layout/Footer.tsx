@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { CONTACT, NAV_LINKS } from "@/lib/constants";
 
@@ -10,13 +11,13 @@ export default function Footer() {
           {/* About */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
-                <span className="text-[var(--primary)] font-bold">AI</span>
-              </div>
-              <div>
-                <h3 className="font-bold">Advantage Imaging</h3>
-                <p className="text-xs text-white/70">& Research Institute</p>
-              </div>
+              <Image
+                src="/images/logo/logo.png"
+                alt="Advantage Imaging"
+                width={140}
+                height={50}
+                className="h-10 w-auto brightness-0 invert"
+              />
             </div>
             <p className="text-white/80 text-sm">
               Expert radiology services at affordable costs. State-of-the-art

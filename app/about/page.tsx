@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Award,
   BookOpen,
@@ -120,6 +121,20 @@ export default function AboutPage() {
                   of Dha. Velu, MLA of Mylapore.
                 </p>
               </motion.div>
+
+              {/* Team Photo */}
+              <motion.div variants={fadeInUp} className="mt-8">
+                <Image
+                  src="/images/about/mission.png"
+                  alt="Our Team at Advantage Imaging"
+                  width={600}
+                  height={400}
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+                <p className="text-center text-sm text-[var(--foreground-muted)] mt-3">
+                  Our dedicated team of radiologists and technologists
+                </p>
+              </motion.div>
             </motion.div>
 
             <motion.div
@@ -198,9 +213,13 @@ export default function AboutPage() {
               className="lg:col-span-1"
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-                <div className="w-32 h-32 rounded-full bg-[var(--primary)] mx-auto mb-6 flex items-center justify-center text-white text-4xl font-bold">
-                  RV
-                </div>
+                <Image
+                  src="/images/doctor/doctor.png"
+                  alt={FOUNDER.name}
+                  width={128}
+                  height={128}
+                  className="w-32 h-32 rounded-full mx-auto mb-6 object-cover"
+                />
                 <h3 className="text-2xl font-bold mb-2">{FOUNDER.name}</h3>
                 <p className="text-[var(--foreground-muted)] mb-2">{FOUNDER.title}</p>
                 <p className="text-[var(--secondary)] font-medium mb-4">

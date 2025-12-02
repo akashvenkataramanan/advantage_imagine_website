@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { NAV_LINKS, CONTACT } from "@/lib/constants";
@@ -33,17 +34,14 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full bg-[var(--primary)] flex items-center justify-center">
-              <span className="text-white font-bold text-xl">AI</span>
-            </div>
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-[var(--primary)] leading-tight">
-                Advantage Imaging
-              </h1>
-              <p className="text-xs text-[var(--foreground-muted)]">
-                & Research Institute
-              </p>
-            </div>
+            <Image
+              src="/images/logo/logo.png"
+              alt="Advantage Imaging"
+              width={180}
+              height={60}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

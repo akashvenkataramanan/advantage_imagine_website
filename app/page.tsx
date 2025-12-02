@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   MapPin,
@@ -214,6 +215,17 @@ export default function Home() {
                   <ChevronRight className="w-5 h-5" />
                 </Link>
               </motion.div>
+
+              {/* Team Photo */}
+              <motion.div variants={fadeInUp} className="mt-8">
+                <Image
+                  src="/images/about/mission.png"
+                  alt="Our Team at Advantage Imaging"
+                  width={600}
+                  height={300}
+                  className="rounded-xl shadow-lg w-full h-auto"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Founder Card */}
@@ -224,9 +236,13 @@ export default function Home() {
               className="bg-[var(--background-alt)] rounded-2xl p-8"
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-20 h-20 rounded-full bg-[var(--primary)] flex items-center justify-center text-white text-2xl font-bold">
-                  RV
-                </div>
+                <Image
+                  src="/images/doctor/doctor.png"
+                  alt={FOUNDER.name}
+                  width={80}
+                  height={80}
+                  className="w-20 h-20 rounded-full object-cover"
+                />
                 <div>
                   <h3 className="text-xl font-bold">{FOUNDER.name}</h3>
                   <p className="text-[var(--foreground-muted)]">{FOUNDER.title}</p>
@@ -325,6 +341,22 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </motion.div>
+
+          {/* Equipment Room Showcase */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-12"
+          >
+            <Image
+              src="/images/equipment/room.png"
+              alt="State-of-the-art scanning room at Advantage Imaging"
+              width={1200}
+              height={500}
+              className="rounded-2xl shadow-xl w-full h-auto"
+            />
           </motion.div>
 
           <motion.div

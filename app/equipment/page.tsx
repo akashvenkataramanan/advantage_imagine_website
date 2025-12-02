@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { CheckCircle, ArrowRight, Phone, Shield, Zap, Heart, Eye } from "lucide-react";
 import { EQUIPMENT, CONTACT } from "@/lib/constants";
 
@@ -132,6 +133,22 @@ export default function EquipmentPage() {
               Our facility is designed with patient comfort and safety in mind,
               featuring the latest in infection control and imaging technology.
             </motion.p>
+          </motion.div>
+
+          {/* Facility Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <Image
+              src="/images/equipment/room.png"
+              alt="State-of-the-art scanning facility at Advantage Imaging"
+              width={1200}
+              height={500}
+              className="rounded-2xl shadow-xl w-full h-auto"
+            />
           </motion.div>
 
           <motion.div
