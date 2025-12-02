@@ -47,7 +47,11 @@ jobs:
       - name: Build Next.js site
         run: npm run build
 
-      # Step 5: Upload the 'out' folder as an artifact for deployment
+      # Step 5: Add .nojekyll file to prevent GitHub from ignoring _next folder
+      - name: Add .nojekyll file
+        run: touch ./out/.nojekyll
+
+      # Step 6: Upload the 'out' folder as an artifact for deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
