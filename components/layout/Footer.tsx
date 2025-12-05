@@ -83,7 +83,7 @@ export default function Footer() {
                 <Clock className="w-5 h-5 text-[var(--secondary-light)] flex-shrink-0 mt-0.5" />
                 <div className="text-white/80">
                   <p>
-                    <strong>Mon - Sat:</strong>
+                    <strong>Monday–Saturday:</strong>
                     <br />
                     {CONTACT.hours.weekdays}
                   </p>

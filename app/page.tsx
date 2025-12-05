@@ -66,6 +66,16 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-3xl"
           >
+            <motion.div variants={fadeInUp} className="mb-6">
+              <Image
+                src={`${BASE_PATH}/images/logo/hero-logo.jpg`}
+                alt="Advantage Imaging Logo"
+                width={300}
+                height={150}
+                className="w-48 md:w-64 lg:w-80 h-auto"
+                priority
+              />
+            </motion.div>
             <motion.p
               variants={fadeInUp}
               className="text-[var(--secondary-light)] font-medium mb-4"
@@ -81,7 +91,7 @@ export default function Home() {
             </motion.h1>
             <motion.p variants={fadeInUp} className="text-lg md:text-xl text-white/90 mb-8">
               Advanced 160-slice CT & 1.5T wide-bore MRI with a healing garden environment.
-              Led by Tata Memorial trained radiologist with 30+ years experience. Anxiety-free scans in Mylapore.
+              Led by Expert and experienced radiologist with 30+ years experience. Anxiety-free scans in Mylapore.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
               <a
@@ -336,14 +346,14 @@ export default function Home() {
             className="mt-12"
           >
             <Image
-              src={`${BASE_PATH}/images/clinic/cheerful.png`}
-              alt="Our friendly team at Advantage Imaging"
+              src={`${BASE_PATH}/images/clinic/cheerful-interior.jpg`}
+              alt="Spacious and cheerful clinic environment at Advantage Imaging"
               width={1000}
               height={400}
               className="rounded-2xl shadow-lg w-full h-auto mx-auto max-w-4xl"
             />
             <p className="text-center text-sm text-[var(--foreground-muted)] mt-4">
-              Our cheerful team ready to welcome you with compassionate care
+              Our spacious and cheerful clinic designed for your comfort
             </p>
           </motion.div>
         </div>
@@ -810,7 +820,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-semibold mb-1">Working Hours</h4>
                     <p className="text-[var(--foreground-muted)]">
-                      Mon - Sat: {CONTACT.hours.weekdays}
+                      Monday–Saturday: {CONTACT.hours.weekdays}
                       <br />
                       Sunday: {CONTACT.hours.sunday}
                     </p>

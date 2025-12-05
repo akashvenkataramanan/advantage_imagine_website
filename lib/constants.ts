@@ -15,8 +15,8 @@ export const CONTACT = {
     country: "India",
   },
   hours: {
-    weekdays: "7:00 AM - 9:00 PM",
-    sunday: "9:00 AM - 7:00 PM",
+    weekdays: "8:00 AM - 8:00 PM",
+    sunday: "By Appointment Only",
   },
   mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.26!3d13.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDAyJzI0LjAiTiA4MMKwMTUnMzYuMCJF!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin",
   googleMapsLink: "https://maps.google.com/?q=No.178+Royapettah+High+Road+Mylapore+Chennai",
@@ -284,8 +284,8 @@ export const TRUST_INDICATORS = [
   },
   {
     icon: "GraduationCap",
-    title: "Tata Memorial Trained",
-    description: "India's premier cancer hospital",
+    title: "Expert Radiologist",
+    description: "30+ years of specialized experience",
   },
   {
     icon: "Building2",
