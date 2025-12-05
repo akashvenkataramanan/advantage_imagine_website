@@ -66,22 +66,19 @@ export default function Home() {
             variants={staggerContainer}
             className="max-w-3xl"
           >
-            <motion.div variants={fadeInUp} className="mb-6">
+            <motion.div variants={fadeInUp} className="flex items-center gap-6 mb-6">
               <Image
                 src={`${BASE_PATH}/images/logo/hero-logo.jpg`}
                 alt="Advantage Imaging Logo"
-                width={300}
-                height={150}
-                className="w-48 md:w-64 lg:w-80 h-auto"
+                width={200}
+                height={200}
+                className="w-24 md:w-32 lg:w-40 h-auto rounded-lg"
                 priority
               />
+              <p className="text-[var(--secondary-light)] font-medium text-xl md:text-2xl">
+                Welcome to Advantage Imaging
+              </p>
             </motion.div>
-            <motion.p
-              variants={fadeInUp}
-              className="text-[var(--secondary-light)] font-medium mb-4"
-            >
-              Welcome to Advantage Imaging
-            </motion.p>
             <motion.h1
               variants={fadeInUp}
               className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
@@ -664,7 +661,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-4 mb-6">
                 <Image
-                  src={`${BASE_PATH}/images/doctor/doctor.png`}
+                  src={`${BASE_PATH}/images/doctor/founder.jpg`}
                   alt={FOUNDER.name}
                   width={100}
                   height={100}

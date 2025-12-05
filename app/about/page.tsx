@@ -214,7 +214,7 @@ export default function AboutPage() {
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
                 <Image
-                  src={`${BASE_PATH}/images/doctor/doctor.png`}
+                  src={`${BASE_PATH}/images/doctor/founder.jpg`}
                   alt={FOUNDER.name}
                   width={128}
                   height={128}
@@ -247,24 +247,17 @@ export default function AboutPage() {
               className="lg:col-span-2 space-y-6"
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h4 className="text-xl font-bold mb-4">Background</h4>
+                <h4 className="text-xl font-bold mb-4">Areas of Expertise</h4>
                 <div className="space-y-4 text-[var(--foreground-muted)]">
                   <p>
-                    Dr. Rochita Venkataramanan completed her undergraduate studies at the
-                    prestigious Grant Medical College and Sir J J Group of Hospitals at Mumbai
-                    in 1989. She was selected for postgraduate training in Radiology at the
-                    Tata Memorial Hospital Mumbai, India&apos;s leading institution for Oncology.
+                    Dr. Rochita Venkataramanan is a pioneer in advanced CT imaging in India,
+                    having established the first 64-slice, 320-slice, and 640-slice CT services
+                    in the country at Apollo Hospitals.
                   </p>
                   <p>
-                    She completed her MD as well as DNB in 1993. Her residency at the Tata
-                    Memorial Hospital gave her deep insight into Oncology-related imaging and
-                    a passion to help patients suffering from cancer.
-                  </p>
-                  <p>
-                    In Chennai, she established the first 64 slice CT scan in India at the
-                    Apollo Heart Centre in 2005. In 2008, she established the 320 slice CT
-                    services, and in 2020 participated in establishing the only 640 slice
-                    CT scan in India at Apollo Heart Centre.
+                    Her expertise spans oncology imaging, cardiac CT angiography, gastrointestinal
+                    radiology, and whole-body MRI for cancer screening. She has contributed five
+                    new diagnostic signs to international radiology literature.
                   </p>
                 </div>
               </div>
