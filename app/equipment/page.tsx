@@ -72,19 +72,27 @@ export default function EquipmentPage() {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] rounded-2xl p-12 text-white text-center">
-                    <div className="text-6xl md:text-7xl font-bold mb-2">
-                      {index === 0 ? "uCT 780" : index === 1 ? "uMR 570" : index === 2 ? "HD" : "DR"}
+                  <div className="rounded-2xl overflow-hidden shadow-lg">
+                    <Image
+                      src={`${BASE_PATH}/images/equipment/${
+                        index === 0 ? "ct-scanner" :
+                        index === 1 ? "mri-machine" :
+                        index === 2 ? "ultrasound-room" :
+                        "ct-scanner-2"
+                      }.jpg`}
+                      alt={item.name}
+                      width={600}
+                      height={400}
+                      className="w-full h-auto object-cover"
+                    />
+                    <div className="bg-gradient-to-br from-[var(--primary)] to-[var(--secondary)] p-4 text-white text-center">
+                      <div className="text-2xl md:text-3xl font-bold">
+                        {index === 0 ? "uCT 780" : index === 1 ? "uMR 570" : index === 2 ? "HD Ultrasound" : "Digital X-Ray"}
+                      </div>
+                      <div className="text-sm text-white/80">
+                        {index === 0 ? "160-Slice CT Scanner" : index === 1 ? "1.5T Wide-Bore MRI" : index === 2 ? "With Elastography" : "Full Spine Capable"}
+                      </div>
                     </div>
-                    <div className="text-xl text-white/80">
-                      {index === 0 ? "160-Slice CT Scanner" : index === 1 ? "1.5T Wide-Bore MRI" : index === 2 ? "Ultrasound" : "Digital X-Ray"}
-                    </div>
-                    {index === 0 && (
-                      <div className="mt-4 text-sm text-white/70">United Imaging</div>
-                    )}
-                    {index === 1 && (
-                      <div className="mt-4 text-sm text-white/70">United Imaging</div>
-                    )}
                   </div>
                 </div>
                 <div className={index % 2 === 1 ? "lg:order-1" : ""}>

@@ -855,18 +855,31 @@ export default function Home() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-2xl overflow-hidden shadow-lg h-[400px] bg-[var(--background-alt)]"
+              className="space-y-4"
             >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.26!3d13.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266f1eb72a8eb%3A0x1234567890abcdef!2sRoyapettah%20High%20Rd%2C%20Mylapore%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Advantage Imaging Location"
-              />
+              {/* Building Photo */}
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src={`${BASE_PATH}/images/clinic/building-front.jpg`}
+                  alt="Advantage Imaging building in Mylapore"
+                  width={600}
+                  height={300}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              {/* Map */}
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[250px] bg-[var(--background-alt)]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.26!3d13.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266f1eb72a8eb%3A0x1234567890abcdef!2sRoyapettah%20High%20Rd%2C%20Mylapore%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Advantage Imaging Location"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

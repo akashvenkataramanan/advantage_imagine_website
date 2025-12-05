@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import {
   Scan,
   CircleDot,
@@ -14,7 +15,21 @@ import {
   ArrowRight,
   Phone,
 } from "lucide-react";
-import { SERVICES, CONTACT } from "@/lib/constants";
+import { SERVICES, CONTACT, BASE_PATH } from "@/lib/constants";
+
+const serviceImages: { [key: string]: { src: string; alt: string }[] } = {
+  ct: [
+    { src: "coronary-ct.jpg", alt: "Coronary CT Angiogram" },
+  ],
+  mri: [
+    { src: "mri-brain.jpg", alt: "Brain MRI with Contrast" },
+    { src: "cardiac-mri.jpg", alt: "Cardiac MRI" },
+  ],
+  ultrasound: [],
+  xray: [],
+  clinical: [],
+  interventional: [],
+};
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -134,6 +149,30 @@ export default function ServicesPage() {
                         className="overflow-hidden"
                       >
                         <div className="px-6 md:px-8 pb-8 pt-2 border-t border-[var(--border)]">
+                          {/* Sample Scan Images */}
+                          {serviceImages[key]?.length > 0 && (
+                            <div className="mt-6 mb-6">
+                              <h4 className="font-semibold text-[var(--foreground-muted)] mb-4 text-sm uppercase tracking-wide">
+                                Sample Scans from Our Center
+                              </h4>
+                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                {serviceImages[key].map((image, imgIndex) => (
+                                  <div key={imgIndex} className="rounded-xl overflow-hidden shadow-md">
+                                    <Image
+                                      src={`${BASE_PATH}/images/scans/${image.src}`}
+                                      alt={image.alt}
+                                      width={400}
+                                      height={300}
+                                      className="w-full h-48 object-cover"
+                                    />
+                                    <div className="bg-[var(--primary)] text-white p-2 text-center text-sm">
+                                      {image.alt}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          )}
                           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
                             {service.categories.map((category, categoryIndex) => (
                               <div key={categoryIndex} className="bg-[var(--background-alt)] rounded-xl p-6">

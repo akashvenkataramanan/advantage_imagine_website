@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Phone, Mail, MapPin, Clock, MessageCircle, ArrowRight } from "lucide-react";
-import { CONTACT } from "@/lib/constants";
+import { CONTACT, BASE_PATH } from "@/lib/constants";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -156,14 +157,44 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
 
-            {/* Map */}
+            {/* Map & Facility Photos */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
               <h2 className="text-3xl font-bold mb-8">Find Us</h2>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-[500px] bg-[var(--background-alt)]">
+
+              {/* Facility Photo Gallery */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={`${BASE_PATH}/images/clinic/building-front.jpg`}
+                    alt="Advantage Imaging building exterior"
+                    width={400}
+                    height={250}
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="bg-[var(--primary)] text-white p-2 text-center text-sm">
+                    Our Building
+                  </div>
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <Image
+                    src={`${BASE_PATH}/images/clinic/waiting-hall.jpg`}
+                    alt="Waiting area at Advantage Imaging"
+                    width={400}
+                    height={250}
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="bg-[var(--primary)] text-white p-2 text-center text-sm">
+                    Waiting Area
+                  </div>
+                </div>
+              </div>
+
+              {/* Map */}
+              <div className="rounded-2xl overflow-hidden shadow-lg h-[350px] bg-[var(--background-alt)]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.0!2d80.26!3d13.04!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266f1eb72a8eb%3A0x1234567890abcdef!2sRoyapettah%20High%20Rd%2C%20Mylapore%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1699999999999!5m2!1sen!2sin"
                   width="100%"

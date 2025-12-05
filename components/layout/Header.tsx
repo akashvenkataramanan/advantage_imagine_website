@@ -23,8 +23,10 @@ export default function Header() {
               {CONTACT.phone[0]}
             </a>
           </div>
-          <div className="hidden md:flex items-center gap-4">
-            <span>{CONTACT.hours.weekdays} (Mon-Sat)</span>
+          <div className="hidden md:flex items-center gap-4 text-xs md:text-sm">
+            <span>Mon-Sat: {CONTACT.hours.weekdays}</span>
+            <span className="mx-1">|</span>
+            <span>Sun: {CONTACT.hours.sunday}</span>
           </div>
         </div>
       </div>
