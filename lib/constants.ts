@@ -29,6 +29,8 @@ export const NAV_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/health-checkups", label: "Health Checkups" },
   { href: "/equipment", label: "Equipment" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -43,9 +45,9 @@ export const FOUNDER = {
     "MD & DNB from Tata Memorial Hospital, Mumbai (1993)",
     "Pioneer of 64, 320 & 640 slice CT in India at Apollo Hospitals",
     "Former Director Clinical Radiology, Apollo Hospitals",
+    "Published author of 5 new radiology diagnostic signs in international journals",
     "Founder & President, Indian Society of Gastrointestinal & Abdominal Radiology (ISGAR)",
-    "Founder & Editor-in-Chief, Journal of Gastrointestinal & Abdominal Radiology (JGAR)",
-    "Published 5 new radiology diagnostic signs in international journals",
+    "Founder & Chief Editor, Journal of Gastrointestinal & Abdominal Radiology (JGAR)",
   ],
   achievements: [
     {
@@ -111,15 +113,16 @@ export const EQUIPMENT = [
   {
     id: "mri",
     name: "United Imaging uMR 570",
-    tagline: "70cm Wide-Bore MRI for Anxiety-Free Scanning",
-    description: "Premium 1.5 Tesla MRI with industry-leading 70cm wide bore and short 150cm magnet length, designed specifically to reduce claustrophobia and anxiety. Supports patients up to 250kg with uCS Compressed Sensing for faster, more comfortable scans.",
+    tagline: "Super Fast 70cm Wide-Bore MRI for Anxiety-Free Scanning",
+    description: "Premium 1.5 Tesla super fast MRI with industry-leading 70cm wide bore and short 150cm magnet length, designed specifically to reduce claustrophobia and anxiety. High gradient of 45 mT/m and exceptional slew rate of 200 T/m/s enable rapid, high-quality imaging. Supports patients up to 250kg with uCS Compressed Sensing for faster, more comfortable scans.",
     features: [
+      "Super fast scanner with 200 T/m/s slew rate",
+      "High gradient: 45 mT/m for superior imaging",
       "70cm extra-wide bore opening",
       "150cm short magnet - less enclosed feeling",
       "1.5 Tesla field strength",
       "Supports patients up to 250 kg",
       "uCS Compressed Sensing for faster scans",
-      "High gradient: 45 mT/m, slew rate 200 T/m/s",
       "Dedicated coils for all body parts",
       "Whole body MRI for cancer screening",
     ],
@@ -254,17 +257,6 @@ export const SERVICES = {
       },
     ],
   },
-  interventional: {
-    title: "Interventional Procedures",
-    icon: "Syringe",
-    description: "Image-guided minimally invasive procedures",
-    categories: [
-      {
-        name: "Procedures",
-        items: ["CT/USG Guided Biopsy", "CT/USG Guided Drainage"],
-      },
-    ],
-  },
 };
 
 // Statistics
@@ -272,7 +264,6 @@ export const STATS = [
   { value: "30+", label: "Years Experience" },
   { value: "160", label: "Slice CT Scanner" },
   { value: "1.5T", label: "MRI Power" },
-  { value: "5", label: "Published Signs" },
 ];
 
 // Trust Indicators
@@ -280,21 +271,80 @@ export const TRUST_INDICATORS = [
   {
     icon: "Award",
     title: "Inaugurated by Health Minister",
-    description: "Tamil Nadu Health Minister Ma. Subramanian",
+    description: "Honorable Tamil Nadu Health Minister M. H. Subramanian",
   },
   {
     icon: "GraduationCap",
-    title: "Expert Radiologist",
-    description: "30+ years of specialized experience",
-  },
-  {
-    icon: "Building2",
-    title: "Apollo Hospitals Pioneer",
-    description: "Former Director Clinical Radiology",
-  },
-  {
-    icon: "Globe",
-    title: "International Recognition",
-    description: "5 diagnostic signs used worldwide",
+    title: "Expert Founder & Chief Radiologist",
+    description: "Founded and led by expert radiologist with 30+ years experience who is a published author, founder and president of Indian Society of Gastrointestinal and Abdominal Radiology (ISGAR), founder and chief editor of Journal of Gastrointestinal and Abdominal Radiology (JGAR)",
   },
 ];
+// Gallery Categories
+export const GALLERY_CATEGORIES = {
+  equipment: {
+    title: "State-of-the-Art Equipment",
+    description: "Our advanced CT, MRI, and imaging technology",
+    images: [
+      { src: "/images/equipment/ct-scanner-1.jpg", alt: "160-slice CT Scanner Room" },
+      { src: "/images/equipment/ct-scanner-2.jpg", alt: "CT Scanner - Advanced Imaging System" },
+      { src: "/images/equipment/mri-1.jpg", alt: "1.5 Tesla Wide-Bore MRI Scanner" },
+      { src: "/images/equipment/ultrasound-room.jpg", alt: "Ultrasound Examination Room" },
+      { src: "/images/equipment/ct-scanner.jpg", alt: "CT Scanner - Patient Positioning" },
+      { src: "/images/equipment/mri-machine.jpg", alt: "MRI Machine - Clinical Setup" },
+    ],
+  },
+  facility: {
+    title: "Our Beautiful Facility",
+    description: "Healing environment with gardens and comfortable spaces",
+    images: [
+      { src: "/images/clinic/building-exterior.jpg", alt: "Advantage Imaging Building Exterior with Gardens" },
+      { src: "/images/clinic/building-front.jpg", alt: "Main Building Entrance" },
+      { src: "/images/clinic/clinic.jpg", alt: "Clinic Surrounded by Beautiful Gardens" },
+      { src: "/images/clinic/spacious-waiting.jpg", alt: "Spacious and Cheerful Waiting Area" },
+      { src: "/images/clinic/third-floor-waiting.jpg", alt: "Third Floor Waiting Hall" },
+      { src: "/images/clinic/cheerful-interior.jpg", alt: "Cheerful Interior Design" },
+      { src: "/images/clinic/waiting-hall.jpg", alt: "Comfortable Patient Waiting Area" },
+    ],
+  },
+  team: {
+    title: "Our Dedicated Team",
+    description: "Expert radiologists, technicians, and caring staff",
+    images: [
+      { src: "/images/team/mission-team.jpg", alt: "Mission Team - Expert Radiologists" },
+      { src: "/images/team/technician-team.jpg", alt: "Technical Team - Imaging Specialists" },
+      { src: "/images/team/nursing-team.jpg", alt: "Nursing Team - Compassionate Care" },
+      { src: "/images/doctor/founder.jpg", alt: "Dr. Rochita Venkataramanan - Founder & Chief Radiologist" },
+    ],
+  },
+  scans: {
+    title: "Sample Diagnostic Images",
+    description: "High-quality scan examples showcasing our imaging capabilities",
+    images: [
+      { src: "/images/scans/coronary-toi.jpg", alt: "Coronary CT Angiography" },
+      { src: "/images/scans/cardiac-mri.jpg", alt: "Cardiac MRI - Heart Imaging" },
+      { src: "/images/scans/cardiac-scar-1.jpg", alt: "Cardiac MRI - Scar Assessment" },
+      { src: "/images/scans/cardiac-scar-2.jpg", alt: "Cardiac MRI - Myocardial Scar" },
+      { src: "/images/scans/ct-ffr.jpg", alt: "CT FFR - Coronary Flow Assessment" },
+      { src: "/images/scans/brain-angiogram.jpg", alt: "MRI Brain with Angiogram" },
+      { src: "/images/scans/brain-perfusion.jpg", alt: "MRI Brain with Perfusion Imaging" },
+      { src: "/images/scans/mrcp.jpg", alt: "MRCP - Bile Duct Imaging" },
+      { src: "/images/scans/breast-mri.jpg", alt: "Breast MRI - Cancer Screening" },
+      { src: "/images/scans/lumbar-spine.jpg", alt: "MRI Lumbar Spine" },
+      { src: "/images/scans/pelvis-mri.jpg", alt: "MRI Pelvis" },
+      { src: "/images/scans/knee-joint.jpg", alt: "MRI Knee Joint" },
+      { src: "/images/scans/shoulder-joint.jpg", alt: "MRI Shoulder Joint" },
+      { src: "/images/scans/angiogram-limbs.jpg", alt: "Angiogram of Lower Limbs" },
+      { src: "/images/scans/small-bowel-crohns.jpg", alt: "Small Bowel MRI - Crohn's Disease" },
+      { src: "/images/scans/ca-esophagus.jpg", alt: "Esophageal Cancer Imaging" },
+      { src: "/images/scans/ca-prostate-dwi.jpg", alt: "Prostate Cancer - DWI MRI" },
+      { src: "/images/scans/ca-pancreas-dwi.jpg", alt: "Pancreatic Cancer - DWI MRI" },
+    ],
+  },
+  inauguration: {
+    title: "Inauguration Ceremony",
+    description: "Inaugurated by Hon. Health Minister M. H. Subramanian",
+    images: [
+      { src: "/images/inauguration/womens-day-group.jpg", alt: "Inauguration Ceremony - Team Celebration" },
+    ],
+  },
+};
